@@ -1,3 +1,4 @@
+# jordan
 class Solution(object):
     def isPalindrome(self, s):
         length = len(s)
@@ -29,4 +30,28 @@ class Solution(object):
             i += 1
             j -= 1
                 
-        
+# raymond    
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        s = s.replace(" ", "")
+        start = 0
+        end = len(s) - 1
+
+        while(start < end):
+            if s[start].isalnum() and s[end].isalnum():
+                if s[start].lower() != s[end].lower():
+                    return False
+            if not s[start].isalnum():
+                start += 1
+                continue
+            if not s[end].isalnum():
+                end -= 1
+                continue
+            start += 1
+            end -= 1
+
+        return True
