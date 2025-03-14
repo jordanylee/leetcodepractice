@@ -1,19 +1,32 @@
 class Solution(object):
     def isPalindrome(self, s):
-        string = str()
-        lengthS = len(s)
-        for i in range(lengthS):
-            char = s[i]
-            if char.isalpha() or char.isdigit():
-                string += char
-        string = lower(string)
-
-        length = len(string)
+        length = len(s)
+        i = 0
         j = length - 1
-        for i in range(length):
+        lowerS = lower(s)
+
+        while(True):
             if i >= j:
                 return True
-            if string[i] != string[j]:
+
+            while(True):
+                if i >= length:
+                    return True
+                iChar = lowerS[i]
+                if iChar.isalpha() or iChar.isdigit():
+                    break
+                i += 1
+            while(True):
+                if j < 0:
+                    return True
+                jChar = lowerS[j]
+                if jChar.isalpha() or jChar.isdigit():
+                    break
+                j -= 1
+                
+            if lowerS[i] != lowerS[j]:
                 return False
-            j = j - 1
-        return True
+            i += 1
+            j -= 1
+                
+        
