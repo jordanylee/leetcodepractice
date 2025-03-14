@@ -1,3 +1,5 @@
+# jordan time 33.33 memory 91.23
+
 class Solution(object):
     def greatestLetter(self, s):
         """
