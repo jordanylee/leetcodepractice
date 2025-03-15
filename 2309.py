@@ -29,3 +29,17 @@ class Solution(object):
                     greatest_letter = upper(char)
 
         return greatest_letter
+    
+
+# raymond time 43.86 memory 57.89
+class Solution(object):
+    def greatestLetter(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        greatest_letter = ""
+        for char in s:
+            if char.islower() and char.upper() in s:
+                greatest_letter = max(greatest_letter, char.upper())
+        return greatest_letter
