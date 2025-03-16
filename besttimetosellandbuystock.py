@@ -28,3 +28,22 @@ class Solution(object):
                 max_profit = prices[right] - prices[left]
                 
             right += 1
+
+# raymond 50 11
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        max_profit = 0
+        left = right = prices[0]
+
+        for i in range(1, len(prices)):
+            right = prices[i]
+            if right > left:
+                max_profit = max(max_profit, right - left)
+            else:
+                left = prices[i]
+
+        return max_profit
